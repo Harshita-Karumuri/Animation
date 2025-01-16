@@ -1,0 +1,108 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #111;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.square{
+    width:580px;
+    height: 580px;
+    background-color: blue;
+    animation: sq 5s linear infinite;
+}
+.heart{
+    height: 70px;
+    width:70px;
+    background-color: black;
+    position: relative;
+    transform: rotate(-45deg);
+    box-shadow: -10px 20px 90px red;
+    animation: harshi 5s linear infinite;
+    z-index: 1;
+    left:18%;
+    top: 10%;
+}
+.heart::before{
+    height: 70px;
+    width:70px;
+    background-color: black;
+    top: -50%;
+    position: absolute;
+    content: '';
+    border-radius: 50%;
+    animation: harshi 5s linear infinite;
+}
+.heart::after{
+    height: 70px;
+    width:70px;
+    background-color: black;
+    right: -50%;
+    position: absolute;
+    content: '';
+    border-radius: 50%;
+    animation: harshi 5s linear infinite;
+}
+@keyframes harshi{
+    0%{
+         transform: rotate(-45deg)scale(1.07);
+    }
+    80%{
+        transform: rotate(-45deg)scale(1.0);
+    }
+    100%{
+        transform: rotate(-45deg)scale(1.02);
+    }
+}
+.circle{
+    height: 400px;
+    width: 400px;
+    background-color: skyblue;
+    border-radius: 50%;
+    border: 2px solid skyblue;
+    animation: cir 5s linear infinite;
+    left: 670px;
+    position: absolute;
+}
+@keyframes cir{
+   from{
+    transform: rotate(0);
+   }
+   to{
+    transform: rotate(360);
+    background-color: skyblue;
+    transition: 2s;
+   } 
+}
+@keyframes cir{
+    from{
+        
+        border:2px solid skyblue;
+    }
+    to{
+        
+        border: 2px solid red;
+    }
+}
+@keyframes harshi {
+    from{
+        background-color: black;
+    }
+    to{
+        background-color: red;
+    }
+}
+@keyframes sq {
+   from{
+   transform: rotate(0deg);
+   background-color: blue;
+   } 
+   to{
+    transform: rotate(360deg);
+    background-color: transparent;
+   }
+}
+
